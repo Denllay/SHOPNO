@@ -5,8 +5,8 @@ Burger.addEventListener("click", (e) => {
   Burger.classList.toggle("toggle");
 });
 
-const item = document.querySelectorAll(".section-services-content-item");
-item.forEach((el) => {
+const saysItem = document.querySelectorAll(".section-services-content-item");
+saysItem.forEach((el) => {
   el.addEventListener("click", (e) => {
     if (e.target.classList.contains("button-revs")) {
       el.children[0].classList.toggle("container-none");
@@ -26,9 +26,7 @@ const changeModal = (e) => {
 };
 function relativeCoords(e) {
   if (Array.from(windows).some((el) => el.style.display === "block")) {
-    windows.forEach((el) => {
-      el.style.display = `none`;
-    });
+    windows.forEach((el) => (el.style.display = `none`));
     changeModal(e);
   } else {
     changeModal(e);
@@ -39,8 +37,7 @@ teamItem.forEach((el) => {
   el.addEventListener("click", relativeCoords);
 });
 
-const sectionTeam = document.querySelector(".section-team");
-sectionTeam.addEventListener("click", (e) => {
+window.addEventListener("click", (e) => {
   if (!e.target.classList.contains("section-team__img")) {
     windows.forEach((el) => {
       el.style.display = `none`;
